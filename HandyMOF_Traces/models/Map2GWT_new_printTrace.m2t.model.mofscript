@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<MOFScriptModel:MOFScriptSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MOFScriptModel="http://org.eclipse.mofscript.model">
+  <transformation line="3" name="Map2GWT">
+    <variables line="4" column="1" name="MAP_GENERATOR_PATH" type="String" constant="true">
+      <value xsi:type="MOFScriptModel:Literal" line="4" column="40" value="D:\Dropbox\workspace_dropbox_2\Traceability_ICMT\classes\"/>
+    </variables>
+    <variables line="6" column="1" name="MAP_GENERATOR_MAIN" type="String" constant="true">
+      <value xsi:type="MOFScriptModel:Literal" line="6" column="40" value="MarkersExample_v2_ICMT_new_3.java"/>
+    </variables>
+    <variables line="7" column="1" name="fileMapGeneratorName" type="String">
+      <value xsi:type="MOFScriptModel:ArithmeticExpression" line="7" column="58">
+        <part1 xsi:type="MOFScriptModel:Reference" line="7" column="37" name="MAP_GENERATOR_PATH"/>
+        <part2 xsi:type="MOFScriptModel:Reference" line="7" column="58" name="MAP_GENERATOR_MAIN"/>
+      </value>
+    </variables>
+    <variables line="8" column="1" name="CLASSPATH" type="String" constant="true">
+      <value xsi:type="MOFScriptModel:Literal" line="8" column="31" value="D:/workspace/APIEvolution/bin/"/>
+    </variables>
+    <variables line="9" column="1" name="index" type="Integer">
+      <value xsi:type="MOFScriptModel:Literal" line="9" column="21" type="INTEGER" value="1"/>
+    </variables>
+    <parameters line="3" column="28" name="ec" type="Map"/>
+    <transformationrules line="73" column="1" isEntryPoint="true" name="main">
+      <statements xsi:type="MOFScriptModel:FileStatement" line="12" column="10" fileReference="f">
+        <fileURI xsi:type="MOFScriptModel:Reference" line="12" column="10" name="fileMapGeneratorName"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="15" column="9">
+        <function line="15" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="15" column="10" value="package com.example.client;"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="15"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="16" column="9">
+        <function line="16" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="16" column="10"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="16"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="17" column="9">
+        <function line="17" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="17" column="10" value="import com.google.gwt.core.client.EntryPoint;"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="17"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="18" column="9">
+        <function line="18" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="18" column="10" value="import com.google.gwt.core.client.MapWidget;"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="18"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="19" column="9">
+        <function line="19" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="19" column="10" value="import com.google.gwt.core.client.control.LargeMapControl;"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="19"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="20" column="9">
+        <function line="20" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="20" column="10" value="import com.google.gwt.core.client.control.MenuMapTypeControl;"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="20"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="21" column="9">
+        <function line="21" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="21" column="10" value="import com.google.gwt.core.client.geom.LatLng;"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="21"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="22" column="9">
+        <function line="22" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="22" column="10" value="import com.google.gwt.core.client.overlay.Marker;"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="22"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="23" column="9">
+        <function line="23" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="23" column="10" value="import com.google.gwt.core.client.overlay.MarkerOptions;"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="23"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="24" column="9">
+        <function line="24" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="24" column="10" value="import com.google.gwt.core.client.ui.RootPanel;"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="24"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="25" column="9">
+        <function line="25" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="25" column="10"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="25"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="26" column="9">
+        <function line="26" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="26" column="10" value="/**"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="26"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="27" column="9">
+        <function line="27" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="27" column="10" value="* Entry point classes define &lt;code>onModuleLoad()&lt;/code>."/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="27"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="28" column="9">
+        <function line="28" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="28" column="10" value="*/"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="28"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="29" column="9">
+        <function line="29" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="29" column="10" value="public class GoogleMapsExample implements EntryPoint {"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="29"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="30" column="9">
+        <function line="30" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="30" column="10"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="30"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="31" column="9">
+        <function line="31" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="31" column="10" value="public void onModuleLoad() {"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="31"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="32" column="9">
+        <function line="32" column="10" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="32" column="10" value=" // Open a map centered on York"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="32"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="10"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="33" column="11">
+        <function line="33" column="12" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="33" column="12" value="MapWidget map = new MapWidget();"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="33"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="12"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="34" column="12">
+        <function line="34" column="13" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="34" column="13" value="map.setSize(&quot;1000&quot;, &quot;500&quot;);"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="34"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="13"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="35" column="12">
+        <function line="35" column="13" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="35" column="13" value="map.addControl(new LargeMapControl());"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="35"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="13"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="36" column="12">
+        <function line="36" column="13" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="36" column="13" value="map.addControl(new MenuMapTypeControl());"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="36"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="13"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="37" column="12">
+        <function line="37" column="13" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="37" column="13" value="LatLng center = LatLng.newInstance(53.962301, -1.081884);"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="37"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="13"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="38" column="12">
+        <function line="38" column="13" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="38" column="13" value="map.setCenter(center);"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="38"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="13"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="39" column="12">
+        <function line="39" column="13" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="39" column="13" value="map.setZoomLevel(14);"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="39"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="13"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="41" column="10">
+        <function line="41" column="11" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="41" column="11"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="41"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="11"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="42" column="10">
+        <function line="42" column="11" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="42" column="11" value="// Set markers"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="42"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="11"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="46" column="12">
+        <function line="46" column="13" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="46" column="13" value="RootPanel.get(&quot;mapContainer&quot;).add(map);"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="46"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="13"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="47" column="12">
+        <function line="47" column="13" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="47" column="13" value=" }"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="47"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="13"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="48" column="12">
+        <function line="48" column="13" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="48" column="13" value="}"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="48"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="13"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:IteratorStatement" type="ec.Address" variable="ecc">
+        <statements xsi:type="MOFScriptModel:FunctionCallStatement">
+          <function line="44" column="2" name="ecc.address" transformationRule="//@transformation.0/@transformationrules.1"/>
+        </statements>
+        <blocks statements="//@transformation.0/@transformationrules.0/@statements.31/@statements.0" protected="true"/>
+        <source xsi:type="MOFScriptModel:FunctionCall" line="43" column="1" name="ec.objectsOfType">
+          <parameters xsi:type="MOFScriptModel:Reference" line="43" column="18" name="ec.Address"/>
+        </source>
+      </statements>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.0" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.1" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.2" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.3" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.4" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.5" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.6" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.7" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.8" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.9" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.10" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.11" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.12" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.13" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.14" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.15" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.16" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.17" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.18" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.19" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.20" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.21" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.22" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.23" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.24" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.25" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.26" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.27" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.31" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.28" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.29" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.30" protected="true"/>
+      <context line="73" column="1" name="self" type="ec.Map"/>
+    </transformationrules>
+    <transformationrules line="73" column="1" name="address">
+      <statements xsi:type="MOFScriptModel:FileStatement" line="52" column="11" fileReference="f">
+        <fileURI xsi:type="MOFScriptModel:Reference" line="52" column="11" name="fileMapGeneratorName"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="54" column="12">
+        <function line="54" column="29" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:ArithmeticExpression" line="54" column="29">
+            <part1 xsi:type="MOFScriptModel:Literal" line="54" column="13" value="LatLng point"/>
+            <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="54" column="36">
+              <part1 xsi:type="MOFScriptModel:Reference" line="54" column="29" name="index"/>
+              <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="54" column="62">
+                <part1 xsi:type="MOFScriptModel:Literal" line="54" column="36" value="= LatLng.newInstance("/>
+                <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="54" column="78">
+                  <part1 xsi:type="MOFScriptModel:Reference" line="54" column="62" name="self.latitude"/>
+                  <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="54" column="84">
+                    <part1 xsi:type="MOFScriptModel:Literal" line="54" column="78" value=","/>
+                    <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="54" column="101">
+                      <part1 xsi:type="MOFScriptModel:Reference" line="54" column="84" name="self.longitude"/>
+                      <part2 xsi:type="MOFScriptModel:Literal" line="54" column="101" value=");"/>
+                    </part2>
+                  </part2>
+                </part2>
+              </part2>
+            </part2>
+          </parameters>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="54"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="29"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="55" column="12">
+        <function line="55" column="45" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:ArithmeticExpression" line="55" column="45">
+            <part1 xsi:type="MOFScriptModel:Literal" line="55" column="13" value="MarkerOptions markeroptions"/>
+            <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="55" column="53">
+              <part1 xsi:type="MOFScriptModel:Reference" line="55" column="45" name="index"/>
+              <part2 xsi:type="MOFScriptModel:Literal" line="55" column="53" value=" = MarkerOptions.newInstance();"/>
+            </part2>
+          </parameters>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="55"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="45"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="56" column="11">
+        <function line="56" column="30" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:ArithmeticExpression" line="56" column="30">
+            <part1 xsi:type="MOFScriptModel:Literal" line="56" column="12" value="markeroptions"/>
+            <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="56" column="38">
+              <part1 xsi:type="MOFScriptModel:Reference" line="56" column="30" name="index"/>
+              <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="56" column="55">
+                <part1 xsi:type="MOFScriptModel:Literal" line="56" column="38" value=".setTitle(&quot;"/>
+                <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="56" column="67">
+                  <part1 xsi:type="MOFScriptModel:Reference" line="56" column="55" name="self.name"/>
+                  <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="56" column="74">
+                    <part1 xsi:type="MOFScriptModel:Literal" line="56" column="67" value=", "/>
+                    <part2 xsi:type="MOFScriptModel:Reference" line="56" column="74" name="self.description"/>
+                  </part2>
+                </part2>
+              </part2>
+            </part2>
+          </parameters>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="56"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="30"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="60" column="11">
+        <function line="60" column="12" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:Literal" line="60" column="12" value="&quot;);"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="60"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="12"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="61" column="11">
+        <function line="61" column="30" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:ArithmeticExpression" line="61" column="30">
+            <part1 xsi:type="MOFScriptModel:Literal" line="61" column="12" value="Marker marker"/>
+            <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="61" column="38">
+              <part1 xsi:type="MOFScriptModel:Reference" line="61" column="30" name="index"/>
+              <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="61" column="62">
+                <part1 xsi:type="MOFScriptModel:Literal" line="61" column="38" value=" = new Marker(point"/>
+                <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="61" column="70">
+                  <part1 xsi:type="MOFScriptModel:Reference" line="61" column="62" name="index"/>
+                  <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="61" column="90">
+                    <part1 xsi:type="MOFScriptModel:Literal" line="61" column="70" value=", markeroptions"/>
+                    <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="61" column="98">
+                      <part1 xsi:type="MOFScriptModel:Reference" line="61" column="90" name="index"/>
+                      <part2 xsi:type="MOFScriptModel:Literal" line="61" column="98" value=");"/>
+                    </part2>
+                  </part2>
+                </part2>
+              </part2>
+            </part2>
+          </parameters>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="61"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="30"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="62" column="11">
+        <function line="62" column="26" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:ArithmeticExpression" line="62" column="26">
+            <part1 xsi:type="MOFScriptModel:Literal" line="62" column="12" value="LatLng sw"/>
+            <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="62" column="34">
+              <part1 xsi:type="MOFScriptModel:Reference" line="62" column="26" name="index"/>
+              <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="62" column="54">
+                <part1 xsi:type="MOFScriptModel:Literal" line="62" column="34" value=" = LatLng.create("/>
+                <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="62" column="69">
+                  <part1 xsi:type="MOFScriptModel:Reference" line="62" column="54" name="self.latitude"/>
+                  <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="62" column="73">
+                    <part1 xsi:type="MOFScriptModel:Literal" line="62" column="69" value=","/>
+                    <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="62" column="88">
+                      <part1 xsi:type="MOFScriptModel:Reference" line="62" column="73" name="self.longitude"/>
+                      <part2 xsi:type="MOFScriptModel:Literal" line="62" column="88" value=");"/>
+                    </part2>
+                  </part2>
+                </part2>
+              </part2>
+            </part2>
+          </parameters>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="62"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="26"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="63" column="12">
+        <function line="63" column="27" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:ArithmeticExpression" line="63" column="27">
+            <part1 xsi:type="MOFScriptModel:Literal" line="63" column="13" value="LatLng ne"/>
+            <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="63" column="35">
+              <part1 xsi:type="MOFScriptModel:Reference" line="63" column="27" name="index"/>
+              <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="63" column="56">
+                <part1 xsi:type="MOFScriptModel:Literal" line="63" column="35" value=" = LatLng.create("/>
+                <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="63" column="71">
+                  <part1 xsi:type="MOFScriptModel:Reference" line="63" column="56" name="self.latitude"/>
+                  <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="63" column="75">
+                    <part1 xsi:type="MOFScriptModel:Literal" line="63" column="71" value=","/>
+                    <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="63" column="91">
+                      <part1 xsi:type="MOFScriptModel:Reference" line="63" column="75" name="self.longitude"/>
+                      <part2 xsi:type="MOFScriptModel:Literal" line="63" column="91" value=");"/>
+                    </part2>
+                  </part2>
+                </part2>
+              </part2>
+            </part2>
+          </parameters>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="63"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="27"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="69" column="11">
+        <function line="69" column="38" name="printTrace">
+          <parameters xsi:type="MOFScriptModel:ArithmeticExpression" line="69" column="38">
+            <part1 xsi:type="MOFScriptModel:Literal" line="69" column="12" value="map.addOverlay(marker"/>
+            <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="69" column="46">
+              <part1 xsi:type="MOFScriptModel:Reference" line="69" column="38" name="index"/>
+              <part2 xsi:type="MOFScriptModel:Literal" line="69" column="46" value=");"/>
+            </part2>
+          </parameters>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="69"/>
+          <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="38"/>
+        </function>
+      </statements>
+      <statements xsi:type="MOFScriptModel:IteratorStatement" variable="pic">
+        <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="65" column="13">
+          <function line="65" column="36" name="printTrace">
+            <parameters xsi:type="MOFScriptModel:ArithmeticExpression" line="65" column="36">
+              <part1 xsi:type="MOFScriptModel:Literal" line="65" column="14" value="LatLngBounds bounds"/>
+              <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="65" column="42">
+                <part1 xsi:type="MOFScriptModel:Reference" line="65" column="36" name="index"/>
+                <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="65" column="70">
+                  <part1 xsi:type="MOFScriptModel:Literal" line="65" column="42" value=" = LatLngBounds.create(sw"/>
+                  <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="65" column="76">
+                    <part1 xsi:type="MOFScriptModel:Reference" line="65" column="70" name="index"/>
+                    <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="65" column="83">
+                      <part1 xsi:type="MOFScriptModel:Literal" line="65" column="76" value=", ne"/>
+                      <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="65" column="89">
+                        <part1 xsi:type="MOFScriptModel:Reference" line="65" column="83" name="index"/>
+                        <part2 xsi:type="MOFScriptModel:Literal" line="65" column="89" value=");"/>
+                      </part2>
+                    </part2>
+                  </part2>
+                </part2>
+              </part2>
+            </parameters>
+            <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="65"/>
+            <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="36"/>
+          </function>
+        </statements>
+        <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="66" column="13">
+          <function line="66" column="33" name="printTrace">
+            <parameters xsi:type="MOFScriptModel:ArithmeticExpression" line="66" column="33">
+              <part1 xsi:type="MOFScriptModel:Literal" line="66" column="14" value="GroundOverlay go"/>
+              <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="66" column="39">
+                <part1 xsi:type="MOFScriptModel:Reference" line="66" column="33" name="index"/>
+                <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="66" column="67">
+                  <part1 xsi:type="MOFScriptModel:Literal" line="66" column="39" value=" = new GroundOverlay(&quot;"/>
+                  <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="66" column="72">
+                    <part1 xsi:type="MOFScriptModel:Reference" line="66" column="67" name="pic"/>
+                    <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="66" column="85">
+                      <part1 xsi:type="MOFScriptModel:Literal" line="66" column="72" value="&quot;, bounds"/>
+                      <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="66" column="91">
+                        <part1 xsi:type="MOFScriptModel:Reference" line="66" column="85" name="index"/>
+                        <part2 xsi:type="MOFScriptModel:Literal" line="66" column="91" value=");"/>
+                      </part2>
+                    </part2>
+                  </part2>
+                </part2>
+              </part2>
+            </parameters>
+            <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="66"/>
+            <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="33"/>
+          </function>
+        </statements>
+        <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="67" column="13">
+          <function line="67" column="36" name="printTrace">
+            <parameters xsi:type="MOFScriptModel:ArithmeticExpression" line="67" column="36">
+              <part1 xsi:type="MOFScriptModel:Literal" line="67" column="14" value="map.addOverlay(go"/>
+              <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="67" column="44">
+                <part1 xsi:type="MOFScriptModel:Reference" line="67" column="36" name="index"/>
+                <part2 xsi:type="MOFScriptModel:Literal" line="67" column="44" value=");"/>
+              </part2>
+            </parameters>
+            <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="67"/>
+            <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="36"/>
+          </function>
+        </statements>
+        <blocks statements="//@transformation.0/@transformationrules.1/@statements.9/@statements.0" protected="true"/>
+        <blocks statements="//@transformation.0/@transformationrules.1/@statements.9/@statements.1" protected="true"/>
+        <blocks statements="//@transformation.0/@transformationrules.1/@statements.9/@statements.2" protected="true"/>
+        <source xsi:type="MOFScriptModel:Reference" line="64" column="2" name="self.pictures"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:IfStatement">
+        <statements xsi:type="MOFScriptModel:FunctionCallStatement" line="58" column="11">
+          <function line="58" column="19" name="printTrace">
+            <parameters xsi:type="MOFScriptModel:ArithmeticExpression" line="58" column="19">
+              <part1 xsi:type="MOFScriptModel:Literal" line="58" column="12" value=", "/>
+              <part2 xsi:type="MOFScriptModel:Reference" line="58" column="19" name="self.telephone"/>
+            </parameters>
+            <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="58"/>
+            <parameters xsi:type="MOFScriptModel:Literal" type="INTEGER" value="19"/>
+          </function>
+        </statements>
+        <blocks statements="//@transformation.0/@transformationrules.1/@statements.10/@statements.0" protected="true"/>
+        <ifExpression xsi:type="MOFScriptModel:ComparisonExpression" line="57" column="24">
+          <part2 xsi:type="MOFScriptModel:Literal" line="57" column="24" value="restaurant"/>
+          <part1 xsi:type="MOFScriptModel:Reference" line="57" column="5" name="self.description"/>
+        </ifExpression>
+      </statements>
+      <statements xsi:type="MOFScriptModel:GeneralAssignment" name="index" operator="PLUS_EQ">
+        <expression xsi:type="MOFScriptModel:Literal" line="70" column="10" type="INTEGER" value="1"/>
+      </statements>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.0" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.1" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.2" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.3" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.10" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.4" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.5" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.6" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.7" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.9" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.8" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.11" protected="true"/>
+      <context line="73" column="1" name="self" type="ec.Address"/>
+    </transformationrules>
+  </transformation>
+</MOFScriptModel:MOFScriptSpecification>

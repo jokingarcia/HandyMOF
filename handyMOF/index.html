@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	 <link rel="stylesheet" href="lib/codemirror.css">
+	 <script src="lib/codemirror.js"></script>
+	 <script src="mode/clike/clike.js"></script>
+	 
+	 <script src="addon/mode/overlay.js"></script>
+ 	 <style>
+	  .CodeMirror {border: 1px solid #ddd; }
+     </style>
+
+     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/custom-theme/jquery-ui-1.10.3.custom.css">
+	
+     <link type="text/css" href="assets/css/font-awesome.min.css" rel="stylesheet" />
+     <!--[if IE 7]>
+     <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
+     <![endif]-->
+     <!--[if lt IE 9]>
+     <link rel="stylesheet" type="text/css" href="css/custom-theme/jquery.ui.1.10.3.ie.css"/>
+     <![endif]-->
+     <link href="assets/css/docs.css" rel="stylesheet">
+     <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+     <!--begin wijmo menu-->
+     <link href="third-party/wijmo/jquery.wijmo-open.1.5.0.css" rel="stylesheet" type="text/css" />
+     <!--End wijmo menu-->
+     <!--begin file input-->
+     <link href="third-party/jQuery-UI-FileInput/css/enhanced.css" rel="Stylesheet">
+     <!--End file input-->
+     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+     <!--[if lt IE 9]>
+     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+     <![endif]-->
+    
+     <!-- jqGrid-->
+     <link rel="stylesheet" href="third-party/jqGrid/jqGrid/css/ui.jqgrid.css" />
+     <link rel="stylesheet" href="third-party/jqGrid/jqGrid.overrides.css"> 
+     <!-- end jqGrid -->
+
+
+     <link type="text/css" href="css/custom-theme/jquery-ui-1.10.2.custom.css" rel="stylesheet" />
+
+	 <script src="assets/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+	 <script src="assets/js/jquery-migrate-1.2.1.js"></script>
+	 <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+	 <script src="assets/js/holder.js"></script>
+	 <script src="assets/js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+	 <script src="assets/js/google-code-prettify/prettify.js" type="text/javascript"></script>
+	 <script src="assets/js/docs.js" type="text/javascript"></script>
+	 <!-- FileInput -->
+	 <script src="third-party/jQuery-UI-FileInput/js/enhance.min.js" type="text/javascript"></script>
+	 <script src="third-party/jQuery-UI-FileInput/js/fileinput.jquery.js" type="text/javascript"></script>
+	 <!-- End FileInput -->
+	 <!--wijmo-->
+	 <script src="third-party/wijmo/jquery.mousewheel.min.js" type="text/javascript"></script>
+	 <script src="third-party/wijmo/jquery.wijmo-open.1.5.0.min.js" type="text/javascript"></script>
+	 <!--End wijmo-->
+	 <!--jqGrid-->
+	 <script src="third-party/jqGrid/jqGrid/js/i18n/grid.locale-en.js"></script>
+	 <script src="third-party/jqGrid/jqGrid/js/jquery.jqGrid.min.js"></script> 
+	 <!--end jqGrid-->
+	 <script src="assets/js/demo-extra.js"></script>	
+	 
+	 
+     <link rel="stylesheet" href="main.css" />
+	 <script src="main.js"></script>	
+	 
+	 <title>HandyMOF</title>	   
+ </head>
+ <body>
+ 	 <h2 class="title"><img src="img/handy-logo-small.png"></img> HandyMOF</h2>
+	 <div class="fullColumn">
+	 	<!--
+		 <div class="column3">
+			 <h4>Project Folder</h4>
+	 		 <input type="file" id="mofscriptFile" name="files[]" directory webkitdirectory/>
+			 <input type="text" id="path"><button id="load">Load</button>
+ 		</div>
+ 		-->
+		 <div class="column3">
+			 <h5>Transformation</h5>
+			 <!--select name="transformationMenu"-->
+				 <!--option value="0">(please select:)</option-->
+				 <!--option value="Map2GWT" selected>Map2GWT.m2t</option-->
+				 <input type="file" id="mofscriptTransformation" value=""/>
+			 <!--/select-->
+ 		</div>
+	    <div class="column3">
+		    <h5>Trace Model</h5>	
+		 <!--select name="modelMenu"-->
+			 <!--option value="0">(please select:)</option-->
+			 <!--option value="Map_1" selected>Map_1.xmi</option-->
+			 <!--option value="All">&lt;All&gt;</option-->
+			 <label for="coverage">Coverage<input type="checkbox" id="coverage"></label>
+			 <input type="file" id="traces" name="Select File"/>			 
+		 <!--/select-->
+	   </div> 
+	    <div id="divGeneratedCode" class="column3 showme">
+			<h5>Generate code</h5>
+				<input type="file" id="generatedCode"/>
+ 		</div>
+ 		 <div id="divModelSet" class="column3 hideme">
+			<h5>Minimal model set</h5>
+				<input type="file" id="modelSet"/>
+ 		</div>
+	 </div>	
+	 
+	 <div id="divVisualizeTraces" class="showme">
+		<button id="visualizeTraces">Visualize Traces</button>
+	 </div>	 
+	  <div id="divCoverageAnalysis" class="hideme">
+		<button id="coverageAnalysis">Coverage Analysis</button>
+	 </div>	   	  
+	 <div class="fullColumn">
+		 <div class="column2">
+			 <div id="transformation" class="codeArea">
+				 <h3>Transformation</h3>
+				 <div class="save">
+	 				<table>
+	 					<tr>
+							<td>Transformation to Save As:</td>
+							<td><input id="inputFileNameToSaveAs"></input></td>
+							<td><input type="image" src="img/save-icon.ico" width="40" height="40" id="saveTransformation"></input></td>
+						</tr>
+	 				</table>
+				 </div>
+		     	 <textarea id="mofscriptCode"></textarea>
+		     	 <textarea id="mofscriptCode2"></textarea>
+		 	 </div>
+		 </div>
+		 <div class="columnMiddle">
+			 <ul id="icons" class="ui-widget ui-helper-clearfix">
+ 			 	<li id="modeLeft" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-arrowthick-1-w"></span></li>				 
+			 	<li id="modeRight" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-arrowthick-1-e"></span></li>
+		     </ul>
+		 </div>
+		 <div class="column2">
+			 <div class="codeArea">
+				 <h3>Generated code</h3>
+				 <div id="tabs">
+			         <ul id="tabLabel">
+			             <li><a href="#file1">GoogleMapsExample.java</a></li>
+			             <li><a href="#file1">MinimalModelSuite.txt</a></li>						 
+			         </ul>
+					 <div if="file1">
+		     	 <textarea id="javaCode">
+</textarea>
+		     	 <textarea id="javaCode2">
+</textarea>
+ <textarea id="javaCode3">
+ <!--Map_1.xmi
+ Map_2.xmi
+ Map_3.xmi
+ Map_4.xmi
+ Map_5.xmi-->
+</textarea>
+				</div>
+			</div>
+		 	 </div>
+		 </div>	
+ 	 </div> 	 
+ </body>
+</html>

@@ -1,0 +1,16 @@
+This project visualizes the traces created in the project "HandyMOF_Traces".
+Files have to be charged in the interface. It is recommended to copy interesting files to
+"files_example" folder from the project "HandyMOF_Traces" to find the files quicker
+1- Charge the transformation file (Map2GWT_new.m2t)
+2- Charge the generated java file (Map2GWT_new_printTrace.java)
+3- Charge the traces (Traces.json)
+4- Click "Visualize Traces" button
+- If something is changed in the transformation textarea, it can be saved with the "Save" button.
+Coverage analysis:
+1- Check the checkbox "Coverage".
+2- In the "Minimal model set", it has to be selected the minimal model suite. In the example:
+select "MinimalModelSuite.txt" to see the minimal set of models
+3- Charge the "Traces_coverage.json" in the "Trace model"
+4- Click the "Coverage Analysis" button
+
+

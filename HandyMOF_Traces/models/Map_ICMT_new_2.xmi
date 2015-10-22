@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<map:Map xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:map="http://onekin.org/metamodels/map" xsi:schemaLocation="http://onekin.org/metamodels/map D:/Dropbox/workspace_dropbox/Traceability/metamodels/Map.ecore">
+  <addresses longitude="-1.054221" latitude="53.94833" description="conference" name="ICMT" telephone="01904320000"/>
+  <addresses longitude="-1.091309" latitude="53.965954" description="hotel" name="The Grange Hotel" telephone="00441904644744"/>
+  <addresses longitude="-1.079723" latitude="53.9613" description="restaurant" name="The Lime House" telephone="0441904632734" downtown="true"/>
+</map:Map>

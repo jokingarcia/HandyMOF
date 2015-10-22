@@ -1,0 +1,764 @@
+--Converts "print" to "printTrace" and inserts "line" and "column" as params
+--in the printTrace, representing position in the transformation
+--metamodel: mofscriptmodel.ecore
+--input:Map2GWT_new.m2t.model.mofscript
+--output:Map2GWT_new_printTrace.m2t.model.mofscript
+module Print2PrintTrace; -- Module Template
+create OUT : Mofscript from IN : Mofscript;
+
+rule MOFScriptSpecification {
+	from
+		s : Mofscript!MOFScriptSpecification(
+		s.oclIsTypeOf(Mofscript!MOFScriptSpecification)	
+		)
+	to
+		t : Mofscript!MOFScriptSpecification(
+			transformation <- s.transformation,
+			imports <- s.imports,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+		
+	}
+}
+rule MOFScriptParameter {
+	from
+		s : Mofscript!MOFScriptParameter(
+		s.oclIsTypeOf(Mofscript!MOFScriptParameter)	
+		)
+	to
+		t : Mofscript!MOFScriptParameter(
+			name <- s.name,
+			type <- s.type,
+			direction <- s.direction,
+			typePrefix <- s.typePrefix,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+		
+	}
+}
+
+rule VariableDeclaration {
+	from
+		s : Mofscript!VariableDeclaration(
+		s.oclIsTypeOf(Mofscript!VariableDeclaration)	
+		)
+	to
+		t : Mofscript!VariableDeclaration(
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment,
+			name <- s.name,
+			type <- s.type,
+			constant <- s.constant,
+			value <- s.value
+		)
+	do {
+		
+	}
+}
+rule FileStatement {
+	from
+		s : Mofscript!FileStatement
+		(
+		s.oclIsTypeOf(Mofscript!FileStatement)	
+		)
+	to
+		t : Mofscript!FileStatement(
+			fileReference <- s.fileReference,
+			use <- s.use,
+			fileURI <- s.fileURI,
+			append <- s.append,
+			owner <- s.owner,
+			statements <- s.statements,
+			variables <- s.variables,
+			blocks <- s.blocks,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+
+rule PrintStatement {
+	from
+		s : Mofscript!PrintStatement(
+		s.oclIsTypeOf(Mofscript!PrintStatement)	
+		)
+	to
+		t : Mofscript!FunctionCallStatement(
+  			function <- fun,
+  			owner <- s.owner,
+  			statements <- s.statements,
+  			variables <- s.variables,
+  			blocks <- s.blocks,
+  			line <- s.line,
+  			column <- s.column,
+  			comment <- s.comment
+  		),
+  		fun : Mofscript!FunctionCall(
+  			--additionalExpressionPart <- s.additionalExpressionPart,
+			--specification <- s.specification,
+			line <- s.printBody.line,
+			column <- s.printBody.column,
+			--comment <- s.comment,
+			name <- 'printTrace',
+			parameters <- s.printBody,
+			--isSuperCall <- s.isSuperCall,
+			transformationRule <- Mofscript!TransformationRule.allInstances()->select(e|e.name='printTrace')->first()
+			--transformationContext <- s.transformationContext
+			
+		)
+	--añadir los tres params extra: línea, columna y tipo de print
+	--printTrace("...", linea, columna)
+	do {
+		fun.parameters<-fun.parameters->append(thisModule.LiteralLazyLine(s));
+		fun.parameters<-fun.parameters->append(thisModule.LiteralLazyColumn(s));
+		--fun.parameters<-fun.parameters->append(thisModule.LiteralLazyPrint(s));
+	}
+}
+lazy rule LiteralLazyLine {
+	from
+		s : Mofscript!PrintStatement
+	to
+		l : Mofscript!Literal (
+			--line <- ,
+			--column <- ,
+			type <- #INTEGER,
+			value <- s.printBody.line.toString()
+		)
+	do {
+	}
+}
+lazy rule LiteralLazyColumn {
+	from
+		s : Mofscript!PrintStatement
+	to
+		l : Mofscript!Literal (
+			--line <- ,
+			--column <- ,
+			type <- #INTEGER,
+			value <- s.printBody.column.toString()
+		)
+	do {
+	}
+}
+--lazy rule LiteralLazyPrint {
+--	from
+--		s : Mofscript!PrintStatement
+--	to
+--		l : Mofscript!Literal (
+--			--line <- ,
+--			--column <- ,
+--			type <- #STRING,
+--			value <- s.printCommand
+--		)
+--	do {
+--	}
+--}
+rule VariableDeclarationStatement {
+	from
+		s : Mofscript!VariableDeclarationStatement(
+		s.oclIsTypeOf(Mofscript!VariableDeclarationStatement)	
+		)
+	to
+		t : Mofscript!VariableDeclarationStatement(
+			variable <- s.variable,
+			owner <- s.owner,
+			statements <- s.statements,
+			variables <- s.variables,
+			blocks <- s.blocks,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule IteratorStatement {
+	from
+		s : Mofscript!IteratorStatement(
+		s.oclIsTypeOf(Mofscript!IteratorStatement)	
+		)
+	to
+		t : Mofscript!IteratorStatement(
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment,
+			type <- s.type,
+			variable <- s.variable,
+			filterExpression <- s.filterExpression,
+			source <- s.source,
+			before <- s.before,
+			between <- s.between,
+			after <- s.after,
+			owner <- s.owner,
+			statements <- s.statements,
+			variables <- s.variables,
+			blocks <- s.blocks
+		)
+	
+}
+rule StatementBlock {
+	from
+		s : Mofscript!StatementBlock(
+		s.oclIsTypeOf(Mofscript!StatementBlock)	
+		)
+	to
+		t : Mofscript!StatementBlock(
+			statements <- s.statements,
+			protected <- s.protected,
+			id <- s.id,
+			reference <- s.reference
+		)
+	do {
+		
+	}
+}
+
+rule MOFScriptTransformation {
+	from
+		s : Mofscript!MOFScriptTransformation(
+		s.oclIsTypeOf(Mofscript!MOFScriptTransformation)	
+		)
+	to
+		t : Mofscript!MOFScriptTransformation(
+			name <- s.name,
+			variables <- s.variables,
+			constants <- s.constants,
+			parameters <- s.parameters,
+			extendsName <- s.extendsName,
+			"extends" <- s."extends",
+			transformationrules <- s.transformationrules,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	
+}
+
+
+rule TransformationRule {
+	from
+		s : Mofscript!TransformationRule
+		(
+		s.oclIsTypeOf(Mofscript!TransformationRule)	
+		)
+	to
+		t : Mofscript!TransformationRule(
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment,
+			--file f2 (CONFIGURATION_PATH)
+			statements <- s.statements,
+			variables <- s.variables,
+			blocks <- s.blocks,
+			isEntryPoint <- s.isEntryPoint,
+			name <- s.name,
+			return <- s.return,
+			owner <- s.owner,
+			"extends" <- s."extends",
+			parameters <- s.parameters,
+			"context" <- s."context",
+			isAbstract <- s.isAbstract,
+			accessLevel <- s.accessLevel
+		)
+	
+}
+
+
+rule MOFScriptComment {
+	from
+		s : Mofscript!MOFScriptComment(
+		s.oclIsTypeOf(Mofscript!MOFScriptComment)	
+		)
+	to
+		t : Mofscript!MOFScriptComment(
+			commentText <- s.commentText,
+			singleLine <- s.singleLine,
+			docStype <- s.docStype,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule ValueExpression {
+	from
+		s : Mofscript!ValueExpression(
+			s.oclIsTypeOf(Mofscript!ValueExpression))
+	to
+		t : Mofscript!ValueExpression(
+			specification <- s.specification,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule MOFScriptImport {
+	from
+		s : Mofscript!MOFScriptImport(
+		s.oclIsTypeOf(Mofscript!MOFScriptImport)	
+		)
+	to
+		t : Mofscript!MOFScriptImport(
+			name <- s.name,
+			type <- s.type,
+			uri <- s.uri,
+			importSemantics <- s.importSemantics,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule LogicalExpression {
+	from
+		s : Mofscript!LogicalExpression(
+		s.oclIsTypeOf(Mofscript!LogicalExpression)	
+		)
+	to
+		t : Mofscript!LogicalExpression(
+			operator <- s.operator,
+			part1 <- s.part1,
+			part2 <- s.part2,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule FunctionCall {
+	from
+		s : Mofscript!FunctionCall(
+		s.oclIsTypeOf(Mofscript!FunctionCall)	
+		)
+	to
+		t : Mofscript!FunctionCall(
+			additionalExpressionPart <- s.additionalExpressionPart,
+			specification <- s.specification,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment,
+			name <- s.name,
+			parameters <- s.parameters,
+			isSuperCall <- s.isSuperCall,
+			transformationRule <- s.transformationRule,
+			transformationContext <- s.transformationContext
+		)
+	do {
+	}
+}
+rule CreateStatement {
+	from
+		s : Mofscript!CreateStatement(
+		s.oclIsTypeOf(Mofscript!CreateStatement)	
+		)
+	to
+		t : Mofscript!CreateStatement(
+			type <- s.type,
+			name <- s.name,
+			owner <- s.owner,
+			statements <- s.statements,
+			variables <- s.variables,
+			blocks <- s.blocks,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule ResultAssignment {
+	from
+		s : Mofscript!ResultAssignment(
+		s.oclIsTypeOf(Mofscript!ResultAssignment)	
+		)
+	to
+		t : Mofscript!ResultAssignment(
+			resultPart <- s.resultPart,
+			operator <- s.operator,
+			expression <- s.expression,
+			owner <- s.owner,
+			statements <- s.statements,
+			variables <- s.variables,
+			blocks <- s.blocks,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule GeneralAssignment {
+	from
+		s : Mofscript!GeneralAssignment(
+		s.oclIsTypeOf(Mofscript!GeneralAssignment)	
+		)
+	to
+		t : Mofscript!GeneralAssignment(
+			name <- s.name,
+			operator <- s.operator,
+			expression <- s.expression,
+			owner <- s.owner,
+			statements <- s.statements,
+			variables <- s.variables,
+			blocks <- s.blocks,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule Literal {
+	from
+		s : Mofscript!Literal(
+		s.oclIsTypeOf(Mofscript!Literal)	
+		)
+	to
+		t : Mofscript!Literal(
+			type <- s.type,
+			value <- s.value,
+			additionalExpressionPart <- s.additionalExpressionPart,
+			specification <- s.specification,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule Reference {
+	from
+		s : Mofscript!Reference(
+		s.oclIsTypeOf(Mofscript!Reference)	
+		)
+	to
+		t : Mofscript!Reference(
+			name <- s.name,
+			additionalExpressionPart <- s.additionalExpressionPart,
+			specification <- s.specification,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule FunctionCallStatement {
+	from
+		s : Mofscript!FunctionCallStatement(
+		s.oclIsTypeOf(Mofscript!FunctionCallStatement)	
+		)
+	to
+		t : Mofscript!FunctionCallStatement(
+			function <- s.function,
+			owner <- s.owner,
+			statements <- s.statements,
+			variables <- s.variables,
+			blocks <- s.blocks,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+
+rule ArithmeticExpression {
+	from
+		s : Mofscript!ArithmeticExpression(
+		s.oclIsTypeOf(Mofscript!ArithmeticExpression)	
+		)
+	to
+		t : Mofscript!ArithmeticExpression(
+			operator <- s.operator,
+			part1 <- s.part1,
+			part2 <- s.part2,
+			specification <- s.specification,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+
+
+rule ComparisonExpression {
+	from
+		s : Mofscript!ComparisonExpression(
+		s.oclIsTypeOf(Mofscript!ComparisonExpression)	
+		)
+	to
+		t : Mofscript!ComparisonExpression(
+			operator <- s.operator,
+			part1 <- s.part1,
+			part2 <- s.part2,
+			--specification <- s.specification,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule IfStatement {
+	from
+		s : Mofscript!IfStatement(
+		s.oclIsTypeOf(Mofscript!IfStatement)	
+		)
+	to
+		t : Mofscript!IfStatement(
+			ifExpression <- s.ifExpression,
+			elseBranch <- s.elseBranch,
+			owner <- s.owner,
+			statements <- s.statements,
+			variables <- s.variables,
+			blocks <- s.blocks,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule BreakStatement {
+	from
+		s : Mofscript!BreakStatement(
+		s.oclIsTypeOf(Mofscript!BreakStatement)	
+		)
+	to
+		t : Mofscript!BreakStatement(
+			owner <- s.owner,
+			statements <- s.statements,
+			variables <- s.variables,
+			blocks <- s.blocks,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule WhileStatement {
+	from
+		s : Mofscript!WhileStatement(
+		s.oclIsTypeOf(Mofscript!WhileStatement)	
+		)
+	to
+		t : Mofscript!WhileStatement(
+			condition <- s.condition,
+			owner <- s.owner,
+			statements <- s.statements,
+			variables <- s.variables,
+			blocks <- s.blocks,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule MOFScriptAspect {
+	from
+		s : Mofscript!MOFScriptAspect(
+		s.oclIsTypeOf(Mofscript!MOFScriptAspect)	
+		)
+	to
+		t : Mofscript!MOFScriptAspect(
+			advice <- s.advice,
+			pointcut <- s.pointcut,
+			name <- s.name,
+			variables <- s.variables,
+			constants <- s.constants,
+			parameters <- s.parameters,
+			extendsName <- s.extendsName,
+			"extends" <- s."extends",
+			transformationrules <- s.transformationrules,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule Advice {
+	from
+		s : Mofscript!Advice(
+		s.oclIsTypeOf(Mofscript!Advice)	
+		)
+	to
+		t : Mofscript!Advice(
+			name <- s.name,
+			code <- s.code,
+			operator <- s.operator,
+			pointcut <- s.pointcut,
+			pointCutRef <- s.pointCutRef,
+			owner <- s.owner,
+			statements <- s.statements,
+			variables <- s.variables,
+			blocks <- s.blocks,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule PointCut {
+	from
+		s : Mofscript!PointCut(
+		s.oclIsTypeOf(Mofscript!PointCut)	
+		)
+	to
+		t : Mofscript!PointCut(
+			name <- s.name,
+			pointcutexpression <- s.pointcutexpression,
+			typeMatch <- s.typeMatch
+		)
+	do {
+	}
+}
+rule PointCutExpression {
+	from
+		s : Mofscript!PointCutExpression(
+		s.oclIsTypeOf(Mofscript!PointCutExpression)	
+		)
+	to
+		t : Mofscript!PointCutExpression(
+			expressionString <- s.expressionString,
+			combinedExpression <- s.combinedExpression,
+			operator <- s.operator,
+			combinationOperator <- s.combinationOperator
+		)
+	do {
+	}
+}
+rule SelectExpression {
+	from
+		s : Mofscript!SelectExpression(
+		s.oclIsTypeOf(Mofscript!SelectExpression)	
+		)
+	to
+		t : Mofscript!SelectExpression(
+			variable <- s.variable,
+			type <- s.type,
+			filterExpression <- s.filterExpression,
+			sourceReference <- s.sourceReference,
+			appliedFunction <- s.appliedFunction,
+			specification <- s.specification,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule CreateExpression {
+	from
+		s : Mofscript!CreateExpression(
+		s.oclIsTypeOf(Mofscript!CreateExpression)	
+		)
+	to
+		t : Mofscript!CreateExpression(
+			type <- s.type,
+			parameters <- s.parameters,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule CreateExpressionParameter {
+	from
+		s : Mofscript!CreateExpressionParameter(
+		s.oclIsTypeOf(Mofscript!CreateExpressionParameter)	
+		)
+	to
+		t : Mofscript!CreateExpressionParameter(
+			name <- s.name,
+			value <- s.value,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule ReturnStatement {
+	from
+		s : Mofscript!ReturnStatement(
+		s.oclIsTypeOf(Mofscript!ReturnStatement)	
+		)
+	to
+		t : Mofscript!ReturnStatement(
+			expression <- s.expression,
+			owner <- s.owner,
+			statements <- s.statements,
+			variables <- s.variables,
+			blocks <- s.blocks,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+
+rule DebugStatement {
+	from
+		s : Mofscript!DebugStatement(
+		s.oclIsTypeOf(Mofscript!DebugStatement)	
+		)
+	to
+		t : Mofscript!DebugStatement(
+			specification <- s.specification,
+			vars <- s.vars,
+			owner <- s.owner,
+			statements <- s.statements,
+			variables <- s.variables,
+			blocks <- s.blocks,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+		)
+	do {
+	}
+}
+rule M2MTrace {
+	from
+		s : Mofscript!M2MTrace(
+		s.oclIsTypeOf(Mofscript!M2MTrace)	
+		)
+	to
+		t : Mofscript!M2MTrace(
+			source <- s.source,
+			target <- s.target,
+			id <- s.id,
+			name <- s.name,
+			owner <- s.owner,
+			statements <- s.statements,
+			variables <- s.variables,
+			blocks <- s.blocks,
+			line <- s.line,
+			column <- s.column,
+			comment <- s.comment
+			
+		)
+	do {
+	}
+}

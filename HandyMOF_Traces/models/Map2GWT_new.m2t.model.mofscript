@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOFScriptModel:MOFScriptSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MOFScriptModel="http://org.eclipse.mofscript.model">
+  <transformation line="3" name="Map2GWT">
+    <variables line="4" column="1" name="MAP_GENERATOR_PATH" type="String" constant="true">
+      <value xsi:type="MOFScriptModel:Literal" line="4" column="40" value="D:\Dropbox\workspace_dropbox_2\Traceability_ICMT\classes\"/>
+    </variables>
+    <variables line="6" column="1" name="MAP_GENERATOR_MAIN" type="String" constant="true">
+      <value xsi:type="MOFScriptModel:Literal" line="6" column="40" value="MarkersExample_v2_ICMT_new_3.java"/>
+    </variables>
+    <variables line="7" column="1" name="fileMapGeneratorName" type="String">
+      <value xsi:type="MOFScriptModel:ArithmeticExpression" line="7" column="58">
+        <part1 xsi:type="MOFScriptModel:Reference" line="7" column="37" name="MAP_GENERATOR_PATH"/>
+        <part2 xsi:type="MOFScriptModel:Reference" line="7" column="58" name="MAP_GENERATOR_MAIN"/>
+      </value>
+    </variables>
+    <variables line="8" column="1" name="CLASSPATH" type="String" constant="true">
+      <value xsi:type="MOFScriptModel:Literal" line="8" column="31" value="D:/workspace/APIEvolution/bin/"/>
+    </variables>
+    <variables line="9" column="1" name="index" type="Integer">
+      <value xsi:type="MOFScriptModel:Literal" line="9" column="21" type="INTEGER" value="1"/>
+    </variables>
+    <parameters line="3" column="28" name="ec" type="Map"/>
+    <transformationrules line="73" column="1" isEntryPoint="true" name="main">
+      <statements xsi:type="MOFScriptModel:FileStatement" line="12" column="10" fileReference="f">
+        <fileURI xsi:type="MOFScriptModel:Reference" line="12" column="10" name="fileMapGeneratorName"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="15" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="15" column="10" value="package com.example.client;"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="16" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="16" column="10"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="17" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="17" column="10" value="import com.google.gwt.core.client.EntryPoint;"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="18" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="18" column="10" value="import com.google.gwt.core.client.MapWidget;"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="19" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="19" column="10" value="import com.google.gwt.core.client.control.LargeMapControl;"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="20" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="20" column="10" value="import com.google.gwt.core.client.control.MenuMapTypeControl;"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="21" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="21" column="10" value="import com.google.gwt.core.client.geom.LatLng;"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="22" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="22" column="10" value="import com.google.gwt.core.client.overlay.Marker;"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="23" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="23" column="10" value="import com.google.gwt.core.client.overlay.MarkerOptions;"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="24" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="24" column="10" value="import com.google.gwt.core.client.ui.RootPanel;"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="25" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="25" column="10"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="26" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="26" column="10" value="/**"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="27" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="27" column="10" value="* Entry point classes define &lt;code>onModuleLoad()&lt;/code>."/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="28" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="28" column="10" value="*/"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="29" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="29" column="10" value="public class GoogleMapsExample implements EntryPoint {"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="30" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="30" column="10"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="31" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="31" column="10" value="public void onModuleLoad() {"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="32" column="9" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="32" column="10" value=" // Open a map centered on York"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="33" column="11" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="33" column="12" value="MapWidget map = new MapWidget();"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="34" column="12" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="34" column="13" value="map.setSize(&quot;1000&quot;, &quot;500&quot;);"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="35" column="12" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="35" column="13" value="map.addControl(new LargeMapControl());"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="36" column="12" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="36" column="13" value="map.addControl(new MenuMapTypeControl());"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="37" column="12" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="37" column="13" value="LatLng center = LatLng.newInstance(53.962301, -1.081884);"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="38" column="12" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="38" column="13" value="map.setCenter(center);"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="39" column="12" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="39" column="13" value="map.setZoomLevel(14);"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="41" column="10" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="41" column="11"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="42" column="10" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="42" column="11" value="// Set markers"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:IteratorStatement" type="ec.Address" variable="ecc">
+        <statements xsi:type="MOFScriptModel:FunctionCallStatement">
+          <function line="44" column="2" name="ecc.address" transformationRule="//@transformation.0/@transformationrules.1"/>
+        </statements>
+        <blocks statements="//@transformation.0/@transformationrules.0/@statements.28/@statements.0" protected="true"/>
+        <source xsi:type="MOFScriptModel:FunctionCall" line="43" column="1" name="ec.objectsOfType">
+          <parameters xsi:type="MOFScriptModel:Reference" line="43" column="18" name="ec.Address"/>
+        </source>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="46" column="12" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="46" column="13" value="RootPanel.get(&quot;mapContainer&quot;).add(map);"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="47" column="12" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="47" column="13" value=" }"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="48" column="12" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="48" column="13" value="}"/>
+      </statements>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.0" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.1" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.2" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.3" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.4" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.5" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.6" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.7" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.8" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.9" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.10" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.11" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.12" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.13" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.14" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.15" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.16" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.17" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.18" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.19" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.20" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.21" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.22" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.23" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.24" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.25" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.26" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.27" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.28" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.29" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.30" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.0/@statements.31" protected="true"/>
+      <context line="73" column="1" name="self" type="ec.Map"/>
+    </transformationrules>
+    <transformationrules line="73" column="1" name="address">
+      <statements xsi:type="MOFScriptModel:FileStatement" line="52" column="11" fileReference="f">
+        <fileURI xsi:type="MOFScriptModel:Reference" line="52" column="11" name="fileMapGeneratorName"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="54" column="12" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:ArithmeticExpression" line="54" column="29">
+          <part1 xsi:type="MOFScriptModel:Literal" line="54" column="13" value="LatLng point"/>
+          <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="54" column="36">
+            <part1 xsi:type="MOFScriptModel:Reference" line="54" column="29" name="index"/>
+            <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="54" column="62">
+              <part1 xsi:type="MOFScriptModel:Literal" line="54" column="36" value="= LatLng.newInstance("/>
+              <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="54" column="78">
+                <part1 xsi:type="MOFScriptModel:Reference" line="54" column="62" name="self.latitude"/>
+                <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="54" column="84">
+                  <part1 xsi:type="MOFScriptModel:Literal" line="54" column="78" value=","/>
+                  <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="54" column="101">
+                    <part1 xsi:type="MOFScriptModel:Reference" line="54" column="84" name="self.longitude"/>
+                    <part2 xsi:type="MOFScriptModel:Literal" line="54" column="101" value=");"/>
+                  </part2>
+                </part2>
+              </part2>
+            </part2>
+          </part2>
+        </printBody>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="55" column="12" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:ArithmeticExpression" line="55" column="45">
+          <part1 xsi:type="MOFScriptModel:Literal" line="55" column="13" value="MarkerOptions markeroptions"/>
+          <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="55" column="53">
+            <part1 xsi:type="MOFScriptModel:Reference" line="55" column="45" name="index"/>
+            <part2 xsi:type="MOFScriptModel:Literal" line="55" column="53" value=" = MarkerOptions.newInstance();"/>
+          </part2>
+        </printBody>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="56" column="11" context="f" printCommand="print">
+        <printBody xsi:type="MOFScriptModel:ArithmeticExpression" line="56" column="30">
+          <part1 xsi:type="MOFScriptModel:Literal" line="56" column="12" value="markeroptions"/>
+          <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="56" column="38">
+            <part1 xsi:type="MOFScriptModel:Reference" line="56" column="30" name="index"/>
+            <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="56" column="55">
+              <part1 xsi:type="MOFScriptModel:Literal" line="56" column="38" value=".setTitle(&quot;"/>
+              <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="56" column="67">
+                <part1 xsi:type="MOFScriptModel:Reference" line="56" column="55" name="self.name"/>
+                <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="56" column="74">
+                  <part1 xsi:type="MOFScriptModel:Literal" line="56" column="67" value=", "/>
+                  <part2 xsi:type="MOFScriptModel:Reference" line="56" column="74" name="self.description"/>
+                </part2>
+              </part2>
+            </part2>
+          </part2>
+        </printBody>
+      </statements>
+      <statements xsi:type="MOFScriptModel:IfStatement">
+        <statements xsi:type="MOFScriptModel:PrintStatement" line="58" column="11" context="f" printCommand="print">
+          <printBody xsi:type="MOFScriptModel:ArithmeticExpression" line="58" column="19">
+            <part1 xsi:type="MOFScriptModel:Literal" line="58" column="12" value=", "/>
+            <part2 xsi:type="MOFScriptModel:Reference" line="58" column="19" name="self.telephone"/>
+          </printBody>
+        </statements>
+        <blocks statements="//@transformation.0/@transformationrules.1/@statements.4/@statements.0" protected="true"/>
+        <ifExpression xsi:type="MOFScriptModel:ComparisonExpression" line="57" column="24">
+          <part2 xsi:type="MOFScriptModel:Literal" line="57" column="24" value="restaurant"/>
+          <part1 xsi:type="MOFScriptModel:Reference" line="57" column="5" name="self.description"/>
+        </ifExpression>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="60" column="11" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:Literal" line="60" column="12" value="&quot;);"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="61" column="11" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:ArithmeticExpression" line="61" column="30">
+          <part1 xsi:type="MOFScriptModel:Literal" line="61" column="12" value="Marker marker"/>
+          <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="61" column="38">
+            <part1 xsi:type="MOFScriptModel:Reference" line="61" column="30" name="index"/>
+            <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="61" column="62">
+              <part1 xsi:type="MOFScriptModel:Literal" line="61" column="38" value=" = new Marker(point"/>
+              <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="61" column="70">
+                <part1 xsi:type="MOFScriptModel:Reference" line="61" column="62" name="index"/>
+                <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="61" column="90">
+                  <part1 xsi:type="MOFScriptModel:Literal" line="61" column="70" value=", markeroptions"/>
+                  <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="61" column="98">
+                    <part1 xsi:type="MOFScriptModel:Reference" line="61" column="90" name="index"/>
+                    <part2 xsi:type="MOFScriptModel:Literal" line="61" column="98" value=");"/>
+                  </part2>
+                </part2>
+              </part2>
+            </part2>
+          </part2>
+        </printBody>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="62" column="11" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:ArithmeticExpression" line="62" column="26">
+          <part1 xsi:type="MOFScriptModel:Literal" line="62" column="12" value="LatLng sw"/>
+          <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="62" column="34">
+            <part1 xsi:type="MOFScriptModel:Reference" line="62" column="26" name="index"/>
+            <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="62" column="54">
+              <part1 xsi:type="MOFScriptModel:Literal" line="62" column="34" value=" = LatLng.create("/>
+              <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="62" column="69">
+                <part1 xsi:type="MOFScriptModel:Reference" line="62" column="54" name="self.latitude"/>
+                <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="62" column="73">
+                  <part1 xsi:type="MOFScriptModel:Literal" line="62" column="69" value=","/>
+                  <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="62" column="88">
+                    <part1 xsi:type="MOFScriptModel:Reference" line="62" column="73" name="self.longitude"/>
+                    <part2 xsi:type="MOFScriptModel:Literal" line="62" column="88" value=");"/>
+                  </part2>
+                </part2>
+              </part2>
+            </part2>
+          </part2>
+        </printBody>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="63" column="12" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:ArithmeticExpression" line="63" column="27">
+          <part1 xsi:type="MOFScriptModel:Literal" line="63" column="13" value="LatLng ne"/>
+          <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="63" column="35">
+            <part1 xsi:type="MOFScriptModel:Reference" line="63" column="27" name="index"/>
+            <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="63" column="56">
+              <part1 xsi:type="MOFScriptModel:Literal" line="63" column="35" value=" = LatLng.create("/>
+              <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="63" column="71">
+                <part1 xsi:type="MOFScriptModel:Reference" line="63" column="56" name="self.latitude"/>
+                <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="63" column="75">
+                  <part1 xsi:type="MOFScriptModel:Literal" line="63" column="71" value=","/>
+                  <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="63" column="91">
+                    <part1 xsi:type="MOFScriptModel:Reference" line="63" column="75" name="self.longitude"/>
+                    <part2 xsi:type="MOFScriptModel:Literal" line="63" column="91" value=");"/>
+                  </part2>
+                </part2>
+              </part2>
+            </part2>
+          </part2>
+        </printBody>
+      </statements>
+      <statements xsi:type="MOFScriptModel:IteratorStatement" variable="pic">
+        <statements xsi:type="MOFScriptModel:PrintStatement" line="65" column="13" context="f" printCommand="println">
+          <printBody xsi:type="MOFScriptModel:ArithmeticExpression" line="65" column="36">
+            <part1 xsi:type="MOFScriptModel:Literal" line="65" column="14" value="LatLngBounds bounds"/>
+            <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="65" column="42">
+              <part1 xsi:type="MOFScriptModel:Reference" line="65" column="36" name="index"/>
+              <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="65" column="70">
+                <part1 xsi:type="MOFScriptModel:Literal" line="65" column="42" value=" = LatLngBounds.create(sw"/>
+                <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="65" column="76">
+                  <part1 xsi:type="MOFScriptModel:Reference" line="65" column="70" name="index"/>
+                  <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="65" column="83">
+                    <part1 xsi:type="MOFScriptModel:Literal" line="65" column="76" value=", ne"/>
+                    <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="65" column="89">
+                      <part1 xsi:type="MOFScriptModel:Reference" line="65" column="83" name="index"/>
+                      <part2 xsi:type="MOFScriptModel:Literal" line="65" column="89" value=");"/>
+                    </part2>
+                  </part2>
+                </part2>
+              </part2>
+            </part2>
+          </printBody>
+        </statements>
+        <statements xsi:type="MOFScriptModel:PrintStatement" line="66" column="13" context="f" printCommand="println">
+          <printBody xsi:type="MOFScriptModel:ArithmeticExpression" line="66" column="33">
+            <part1 xsi:type="MOFScriptModel:Literal" line="66" column="14" value="GroundOverlay go"/>
+            <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="66" column="39">
+              <part1 xsi:type="MOFScriptModel:Reference" line="66" column="33" name="index"/>
+              <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="66" column="67">
+                <part1 xsi:type="MOFScriptModel:Literal" line="66" column="39" value=" = new GroundOverlay(&quot;"/>
+                <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="66" column="72">
+                  <part1 xsi:type="MOFScriptModel:Reference" line="66" column="67" name="pic"/>
+                  <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="66" column="85">
+                    <part1 xsi:type="MOFScriptModel:Literal" line="66" column="72" value="&quot;, bounds"/>
+                    <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="66" column="91">
+                      <part1 xsi:type="MOFScriptModel:Reference" line="66" column="85" name="index"/>
+                      <part2 xsi:type="MOFScriptModel:Literal" line="66" column="91" value=");"/>
+                    </part2>
+                  </part2>
+                </part2>
+              </part2>
+            </part2>
+          </printBody>
+        </statements>
+        <statements xsi:type="MOFScriptModel:PrintStatement" line="67" column="13" context="f" printCommand="println">
+          <printBody xsi:type="MOFScriptModel:ArithmeticExpression" line="67" column="36">
+            <part1 xsi:type="MOFScriptModel:Literal" line="67" column="14" value="map.addOverlay(go"/>
+            <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="67" column="44">
+              <part1 xsi:type="MOFScriptModel:Reference" line="67" column="36" name="index"/>
+              <part2 xsi:type="MOFScriptModel:Literal" line="67" column="44" value=");"/>
+            </part2>
+          </printBody>
+        </statements>
+        <blocks statements="//@transformation.0/@transformationrules.1/@statements.9/@statements.0" protected="true"/>
+        <blocks statements="//@transformation.0/@transformationrules.1/@statements.9/@statements.1" protected="true"/>
+        <blocks statements="//@transformation.0/@transformationrules.1/@statements.9/@statements.2" protected="true"/>
+        <source xsi:type="MOFScriptModel:Reference" line="64" column="2" name="self.pictures"/>
+      </statements>
+      <statements xsi:type="MOFScriptModel:PrintStatement" line="69" column="11" context="f" printCommand="println">
+        <printBody xsi:type="MOFScriptModel:ArithmeticExpression" line="69" column="38">
+          <part1 xsi:type="MOFScriptModel:Literal" line="69" column="12" value="map.addOverlay(marker"/>
+          <part2 xsi:type="MOFScriptModel:ArithmeticExpression" line="69" column="46">
+            <part1 xsi:type="MOFScriptModel:Reference" line="69" column="38" name="index"/>
+            <part2 xsi:type="MOFScriptModel:Literal" line="69" column="46" value=");"/>
+          </part2>
+        </printBody>
+      </statements>
+      <statements xsi:type="MOFScriptModel:GeneralAssignment" name="index" operator="PLUS_EQ">
+        <expression xsi:type="MOFScriptModel:Literal" line="70" column="10" type="INTEGER" value="1"/>
+      </statements>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.0" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.1" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.2" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.3" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.4" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.5" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.6" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.7" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.8" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.9" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.10" protected="true"/>
+      <blocks statements="//@transformation.0/@transformationrules.1/@statements.11" protected="true"/>
+      <context line="73" column="1" name="self" type="ec.Address"/>
+    </transformationrules>
+  </transformation>
+</MOFScriptModel:MOFScriptSpecification>

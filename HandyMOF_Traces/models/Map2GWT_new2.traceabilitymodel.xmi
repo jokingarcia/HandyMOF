@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ASCII"?>
+<traceabilitymodel:TraceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:traceabilitymodel="http://org.eclipse.mofscript.traceabilitymodel">
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.0" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.0" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.1" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.1" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.2" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.2" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.3" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.3" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.4" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.0" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.5" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.1" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.6" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.0" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.7" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.1" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.8" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.4" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.9" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.5" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.10" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.6" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.11" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.7" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.12" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.4" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.13" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.5" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.14" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.4" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.15" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.5" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.16" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.8" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.17" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.9" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.18" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.10" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.19" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.11" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.20" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.12" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.21" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.8" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.22" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.9" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.23" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.8" specificationName="Map2GWT"/>
+  <trace segment="//@files.0/@blocks.0/@traceablesegment.24" sourceOperationID="ec.Address" sourceOperationName="address" originatinElement="//@modelElementRefs.9" specificationName="Map2GWT"/>
+  <files ID="D:\Dropbox\workspace_dropbox\Traceability\classes\MarkersExample_v2_ICMT_new_2.java" name="MarkersExample_v2_ICMT_new_2.java" URI="D:\Dropbox\workspace_dropbox\Traceability\classes\MarkersExample_v2_ICMT_new_2.java">
+    <blocks ID="Block id: 0" startPos="947" endPos="1931" protectedBlock="true" startLine="28" startColumn="34" endColumn="37" endLine="47">
+      <traceablesegment startPos="947" endPos="955" startLine="28" endLine="28" startColumn="34" endColumn="42"/>
+      <traceablesegment startPos="948" endPos="957" startLine="28" endLine="28" startColumn="35" endColumn="44"/>
+      <traceablesegment startPos="1055" endPos="1059" startLine="30" endLine="30" startColumn="25" endColumn="29"/>
+      <traceablesegment startPos="1061" endPos="1071" startLine="30" endLine="30" startColumn="31" endColumn="41"/>
+      <traceablesegment startPos="1157" endPos="1165" startLine="32" endLine="32" startColumn="27" endColumn="35"/>
+      <traceablesegment startPos="1158" endPos="1167" startLine="32" endLine="32" startColumn="28" endColumn="37"/>
+      <traceablesegment startPos="1206" endPos="1214" startLine="33" endLine="33" startColumn="27" endColumn="35"/>
+      <traceablesegment startPos="1207" endPos="1216" startLine="33" endLine="33" startColumn="28" endColumn="37"/>
+      <traceablesegment startPos="1288" endPos="1297" startLine="35" endLine="35" startColumn="34" endColumn="43"/>
+      <traceablesegment startPos="1289" endPos="1298" startLine="35" endLine="35" startColumn="35" endColumn="44"/>
+      <traceablesegment startPos="1397" endPos="1413" startLine="37" endLine="37" startColumn="25" endColumn="41"/>
+      <traceablesegment startPos="1415" endPos="1420" startLine="37" endLine="37" startColumn="43" endColumn="48"/>
+      <traceablesegment startPos="1506" endPos="1515" startLine="39" endLine="39" startColumn="27" endColumn="36"/>
+      <traceablesegment startPos="1507" endPos="1516" startLine="39" endLine="39" startColumn="28" endColumn="37"/>
+      <traceablesegment startPos="1556" endPos="1565" startLine="40" endLine="40" startColumn="27" endColumn="36"/>
+      <traceablesegment startPos="1557" endPos="1566" startLine="40" endLine="40" startColumn="28" endColumn="37"/>
+      <traceablesegment startPos="1639" endPos="1646" startLine="42" endLine="42" startColumn="34" endColumn="41"/>
+      <traceablesegment startPos="1640" endPos="1649" startLine="42" endLine="42" startColumn="35" endColumn="44"/>
+      <traceablesegment startPos="1746" endPos="1760" startLine="44" endLine="44" startColumn="25" endColumn="39"/>
+      <traceablesegment startPos="1762" endPos="1772" startLine="44" endLine="44" startColumn="41" endColumn="51"/>
+      <traceablesegment startPos="1775" endPos="1788" startLine="44" endLine="44" startColumn="54" endColumn="67"/>
+      <traceablesegment startPos="1873" endPos="1880" startLine="46" endLine="46" startColumn="27" endColumn="34"/>
+      <traceablesegment startPos="1874" endPos="1883" startLine="46" endLine="46" startColumn="28" endColumn="37"/>
+      <traceablesegment startPos="1921" endPos="1928" startLine="47" endLine="47" startColumn="27" endColumn="34"/>
+      <traceablesegment startPos="1922" endPos="1931" startLine="47" endLine="47" startColumn="28" endColumn="37"/>
+    </blocks>
+  </files>
+  <modelElementRefs ID="Address@4e8e01{file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.0" name="Address:ICMT:->latitude" featureRef="latitude" uri="file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.0" metaModel="//@metaModels.0"/>
+  <modelElementRefs ID="Address@4e8e01{file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.0" name="Address:ICMT:->longitude" featureRef="longitude" uri="file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.0" metaModel="//@metaModels.0"/>
+  <modelElementRefs ID="Address@4e8e01{file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.0" name="Address:ICMT:->name" featureRef="name" uri="file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.0" metaModel="//@metaModels.0"/>
+  <modelElementRefs ID="Address@4e8e01{file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.0" name="Address:ICMT:->description" featureRef="description" uri="file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.0" metaModel="//@metaModels.0"/>
+  <modelElementRefs ID="Address@f28b9b{file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.1" name="Address:The Grange Hotel:->latitude" featureRef="latitude" uri="file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.1" metaModel="//@metaModels.0"/>
+  <modelElementRefs ID="Address@f28b9b{file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.1" name="Address:The Grange Hotel:->longitude" featureRef="longitude" uri="file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.1" metaModel="//@metaModels.0"/>
+  <modelElementRefs ID="Address@f28b9b{file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.1" name="Address:The Grange Hotel:->name" featureRef="name" uri="file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.1" metaModel="//@metaModels.0"/>
+  <modelElementRefs ID="Address@f28b9b{file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.1" name="Address:The Grange Hotel:->description" featureRef="description" uri="file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.1" metaModel="//@metaModels.0"/>
+  <modelElementRefs ID="Address@1b4a27d{file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.2" name="Address:The Lime House:->latitude" featureRef="latitude" uri="file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.2" metaModel="//@metaModels.0"/>
+  <modelElementRefs ID="Address@1b4a27d{file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.2" name="Address:The Lime House:->longitude" featureRef="longitude" uri="file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.2" metaModel="//@metaModels.0"/>
+  <modelElementRefs ID="Address@1b4a27d{file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.2" name="Address:The Lime House:->name" featureRef="name" uri="file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.2" metaModel="//@metaModels.0"/>
+  <modelElementRefs ID="Address@1b4a27d{file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.2" name="Address:The Lime House:->description" featureRef="description" uri="file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.2" metaModel="//@metaModels.0"/>
+  <modelElementRefs ID="Address@1b4a27d{file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.2" name="Address:The Lime House:->telephone" featureRef="telephone" uri="file:/C:/Users/Jokin/Dropbox/workspace_dropbox/Traceability/models/Map_ICMT_new_2.xmi#//@addresses.2" metaModel="//@metaModels.0"/>
+  <metaModels name="Map" nsUri="http://onekin.org/metamodels/map"/>
+</traceabilitymodel:TraceModel>

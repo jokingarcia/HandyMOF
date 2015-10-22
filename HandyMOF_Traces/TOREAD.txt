@@ -1,0 +1,43 @@
+This project generates traces between M2T transformation and generated code
+There are two steps:
+1- Convert the original transformation into a transformation containing the line and column
+information on each print. MOFScript_original -> MOFScript_linecolumn. To this end, a HOT is
+executed to transform the transformation.
+In the example: Print2PrintTrace.atl is executed with Map2GWT_new.m2t as input and
+Map2GWT_new_printTrace as output
+2- Execute the transformation. The trnasformation has two outputs: the java file and the
+traces in JSON format.
+In the example: Map2GWT_new_printTrace_output.java and Traces.json
+
+
+ property TRACES_PATH : String = "D:\\Dropbox\\workspace_dropbox_2\\HandyMOF_Traces\\models\\Traces.json"; //portatil
+    //property TRACES_PATH : String = "C:\\Users\\Jokin\\Dropbox\\workspace_dropbox_2\\HandyMOF_Traces\\models\\Traces.json"; //casa
+	var traces: String = "[";
+	var lineCounter: Integer = 1;
+	var printlength: Integer = 1;
+	var endColumn: Integer = 1;
+	
+//-------------------------------------------------------------------------------------------
+//-------------------START printTrace.m2t--------------------------------------------------
+//--------------------------------------------------------------------------------------------
+
+//Adapter
+printTrace(statement: String, line: Integer, column: Integer){
+  	
+  	//file f ( "D:/Dropbox/workspace_dropbox_2/WikiWhirlEvolution_2/models/FreeMind_MediaWiki_printSQL.sql" )//portatil
+  	//file f ( "C:/Users/Jokin/Dropbox/workspace_dropbox_2/WikiWhirlEvolution_2/models/FreeMind_MediaWiki_printSQL.sql" )//casa
+ 	file f (fileMapGeneratorName);
+  	stdout.println("statement: "+statement);
+  	printlength = statement.size();
+  	endColumn = column + printlength;
+	traces = traces + "{\"line\":" +line+", \"column\":" +column+ ", \"linecode\":" +lineCounter+
+	 ", \"startColumn\": 1, \"endColumn\":" +endColumn+ "},";
+	lineCounter = lineCounter +1;
+	f.println(statement);
+	
+}//printTrace
+
+//----------------------------------------------------------------------------------------------------------------
+//--------------END printSQL.m2t--------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------
+	

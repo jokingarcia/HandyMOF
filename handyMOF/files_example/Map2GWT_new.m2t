@@ -1,0 +1,73 @@
+//Genera un java con la versión 2 de la API
+//Input: Map_conference.xmi
+texttransformation Map2GWT (in ec : "Map") {
+	property MAP_GENERATOR_PATH : String = "D:\\Dropbox\\workspace_dropbox_2\\Traceability_ICMT\\classes\\";
+	//property MAP_GENERATOR_PATH : String = "C:\\Users\\Jokin\\Dropbox\\workspace_dropbox\\Traceability\\classes\\";
+	property MAP_GENERATOR_MAIN : String = "MarkersExample_v2_ICMT_new_3.java";
+	var fileMapGeneratorName : String = MAP_GENERATOR_PATH + MAP_GENERATOR_MAIN;
+	property CLASSPATH : String = "D:/workspace/APIEvolution/bin/"
+	var index:Integer = 1;
+	ec.Map::main() {
+	  	
+		file f (fileMapGeneratorName);
+//Llamadas java: la clase no tiene que tener constructora o sino el método tiene que ser estático
+//f.println(java("Map.util.ClassA", "getText", null, CLASSPATH));  	
+f.println("package com.example.client;");	
+f.println("");	
+f.println("import com.google.gwt.core.client.EntryPoint;");	
+f.println("import com.google.gwt.core.client.MapWidget;");	
+f.println("import com.google.gwt.core.client.control.LargeMapControl;");	
+f.println("import com.google.gwt.core.client.control.MenuMapTypeControl;");	
+f.println("import com.google.gwt.core.client.geom.LatLng;");	
+f.println("import com.google.gwt.core.client.overlay.Marker;");	
+f.println("import com.google.gwt.core.client.overlay.MarkerOptions;");	
+f.println("import com.google.gwt.core.client.ui.RootPanel;");	
+f.println("");	
+f.println("/**");	
+f.println("* Entry point classes define <code>onModuleLoad()</code>.");	
+f.println("*/");	
+f.println("public class GoogleMapsExample implements EntryPoint {");	
+f.println("");	
+f.println("public void onModuleLoad() {");	
+f.println(" // Open a map centered on York");	
+  f.println("MapWidget map = new MapWidget();");
+   f.println("map.setSize(\"1000\", \"500\");");
+   f.println("map.addControl(new LargeMapControl());");
+   f.println("map.addControl(new MenuMapTypeControl());");
+   f.println("LatLng center = LatLng.newInstance(53.962301, -1.081884);");
+   f.println("map.setCenter(center);");
+   f.println("map.setZoomLevel(14);");
+
+ f.println("");
+ f.println("// Set markers");
+ ec.objectsOfType(ec.Address)->forEach(ecc:ec.Address) {
+  ecc.address();
+ }
+   f.println("RootPanel.get(\"mapContainer\").add(map);");
+   f.println(" }");
+   f.println("}");
+	
+}	
+	ec.Address::address() {
+	  file f (fileMapGeneratorName);
+	 
+	  f.println("LatLng point"+ index +"= LatLng.newInstance(" + self.latitude + "," + self.longitude + ");");
+ 	 f.println("MarkerOptions markeroptions" + index + " = MarkerOptions.newInstance();");
+   	f.print("markeroptions" + index + ".setTitle(\"" + self.name + ", " + self.description);
+  if(self.description = "restaurant"){
+    f.print(", " + self.telephone);
+  }
+  f.println("\");");
+  f.println("Marker marker" + index + " = new Marker(point" + index + ", markeroptions" + index + ");");
+  f.println("LatLng sw" + index + " = LatLng.create("+self.latitude +","+self.longitude+");");
+   f.println("LatLng ne" + index + " = LatLng.create("+ self.latitude +","+self.longitude +");");
+ 	self.pictures->forEach(pic){
+  		f.println("LatLngBounds bounds"+index+" = LatLngBounds.create(sw"+index+", ne"+index+");");
+  		f.println("GroundOverlay go"+index+" = new GroundOverlay(\""+  pic +"\", bounds"+index+");");
+  		f.println("map.addOverlay(go" + index + ");");
+ 	}
+  f.println("map.addOverlay(marker" + index + ");");
+	index += 1;
+	}
+	
+}
